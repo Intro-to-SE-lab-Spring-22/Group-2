@@ -16,6 +16,9 @@ import {
 import HeaderIcon from "./HeaderIcon";
 import Image from 'next/image';
 import {auth} from '../firebase';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+
 
 const user = auth.currentUser;
 function Header(){
@@ -50,8 +53,11 @@ function Header(){
                 height="40"
                 layout="fixed"
                 />*/}
+                    
 
-                <p className="whitespace-nowrap font-semibold pr-3">{user.email}</p>
+
+                                    
+                {/* <p className="whitespace-nowrap font-semibold pr-3">{user.email}</p> */}
                 <ViewGridIcon className="icon" />
                 <ChatIcon className="icon" />
                 <BellIcon className="icon" />

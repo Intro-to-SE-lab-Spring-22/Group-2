@@ -7,15 +7,15 @@ function SignUp(){
                 <h3>Sign Up</h3>
                 <div className="form-group">
                     <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
+                    <input type="text" className="form-control" placeholder="First name" id="signup-firstname" />
                 </div>
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" className="form-control" placeholder="User name" />
+                    <input type="text" className="form-control" placeholder="User name" id="signup-username"/>
                 </div>
                 <div className="form-group">
                     <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                    <input type="text" className="form-control" placeholder="Last name" id="signup-lastname"/>
                 </div>
                 <div className="form-group">
                     <label>Email address</label>
