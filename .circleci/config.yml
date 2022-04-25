@@ -28,6 +28,9 @@ jobs:
       - run:
           name: "Check files in this directory"
           command: ls -a
+      - run:
+          name: "Move into web-files directory"
+          command: cd web_files/
         
 workflows:
   my-custom-workflow:
