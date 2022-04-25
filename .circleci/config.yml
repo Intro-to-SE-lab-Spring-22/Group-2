@@ -30,7 +30,7 @@ jobs:
           command: ls -a
       - run:
           name: "Move into web-files directory"
-          command: cd web_files/
+          command: cd web-files/
       - run:
           name: "Sanity check that it's actually in the right directory"
           command: ls -a
