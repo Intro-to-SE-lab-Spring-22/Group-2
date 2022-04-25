@@ -31,6 +31,12 @@ jobs:
       - run:
           name: "Move into web-files directory"
           command: cd web_files/
+      - run:
+          name: "Sanity check that it's actually in the right directory"
+          command: ls -a
+      - run:
+          name: "Please actually run the tests"
+          command: yarn test
         
 workflows:
   my-custom-workflow:
