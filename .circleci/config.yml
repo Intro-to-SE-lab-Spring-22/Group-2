@@ -25,6 +25,9 @@ jobs:
       - run:
           name: "What branch am I on now?"
           command: echo $CIRCLE_WORKING_DIRECTORY
+      - run:
+          name: "Run tests"
+          command: yarn test
 workflows:
   my-custom-workflow:
     jobs:
