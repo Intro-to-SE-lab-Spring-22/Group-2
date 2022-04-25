@@ -25,7 +25,6 @@ jobs:
       - run:
           name: "What branch am I on now?"
           command: echo $CIRCLE_WORKING_DIRECTORY
-          command: ls -a
 workflows:
   my-custom-workflow:
     jobs:
