@@ -14,13 +14,11 @@ executors:
           password: $DOCKER_HUB_PASSWORD
       - image: cimg/node:16.14.2
 jobs:
-  build: 
-      working_directory: ~/web-files
   test-job:
     executor: my-custom-executor
     steps:
       - checkout:
-          working_directory: ~/web-files
+          working_directory: ~/project/web-files
       - node/install:
           install-yarn: true
           node-version: '16.13'
@@ -28,20 +26,13 @@ jobs:
           name: "What branch am I on now?"
           command: echo $CIRCLE_WORKING_DIRECTORY
       - run:
-          name: "Check files in this directory"
-          command: ls -a
+          name: "Check that cd actually works"
+          command: cd web-files/ && ls -a
       - run:
-          name: "Move into web-files directory"
-          command: cd web-files/
-      - run:
-          name: "Sanity check that it's actually in the right directory"
-          command: ls -a
-      - run:
-          name: "Please actually run the tests"
-          command: yarn test
+          name: "Move into web-files directory and run tests"
+          command: cd web-files/ && yarn test
         
 workflows:
   my-custom-workflow:
     jobs:
-      - build
       - test-job
