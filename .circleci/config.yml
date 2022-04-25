@@ -14,11 +14,13 @@ executors:
           password: $DOCKER_HUB_PASSWORD
       - image: cimg/node:16.14.2
 jobs:
-  test-job:
-    build: 
+  build: 
       working_directory: ~/web-files
+  test-job:
     executor: my-custom-executor
     steps:
+      - checkout:
+          working_directory: ~/web-files
       - node/install:
           install-yarn: true
           node-version: '16.13'
@@ -41,4 +43,5 @@ jobs:
 workflows:
   my-custom-workflow:
     jobs:
+      - build
       - test-job
