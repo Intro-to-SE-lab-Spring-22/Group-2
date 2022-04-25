@@ -15,10 +15,10 @@ executors:
       - image: cimg/node:16.14.2
 jobs:
   test-job:
+    build: 
+      working_directory: ~/web-files
     executor: my-custom-executor
     steps:
-      - checkout:
-          working_directory: ~/web-files
       - node/install:
           install-yarn: true
           node-version: '16.13'
